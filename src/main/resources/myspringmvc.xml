@@ -25,12 +25,13 @@
     <context:component-scan base-package="service"></context:component-scan>
     <context:component-scan base-package="dao"></context:component-scan>
 
+    <context:property-placeholder location="classpath:mylogin.properties"/>
 
     <bean id="aa" class="org.apache.commons.dbcp2.BasicDataSource">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-        <property name="url" value="jdbc:mysql://127.0.0.1:3306/ds_0?serverTimezone=Asia/Shanghai"/>
-        <property name="username" value="root"/>
-        <property name="password" value="a123456"/>
+        <property name="driverClassName" value="${mysql.driverClassName}"></property>
+        <property name="url" value="${mysql.url}"/>
+        <property name="username" value="${mysql.username}"/>
+        <property name="password" value="${mysql.password}"/>
     </bean>
 
     <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">

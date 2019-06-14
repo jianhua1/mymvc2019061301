@@ -23,18 +23,12 @@ public class TUserController {
     @Autowired
     Receive receive;
 
-   /* @ResponseBody
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public List<TUser> getUser() {
-        List<TUser> list=new ArrayList<>();
-        String aa = redisTemplate.opsForValue().get("aa");
-        if(StringUtils.isEmpty(aa)){
-            list = userService.getUser();
-            redisTemplate.opsForList().leftPushAll("aa",list);
-        }else{
-        }
+    @ResponseBody
+    @RequestMapping(value = "/user5", method = RequestMethod.GET)
+    public List<TUser> getUser5() {
+        List<TUser> list = userService.getUser();
         return list;
-    }*/
+    }
 
     @ResponseBody
     @RequestMapping(value = "/user", method = RequestMethod.GET)
