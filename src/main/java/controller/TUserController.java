@@ -60,4 +60,13 @@ public class TUserController {
         System.out.println(username+""+password);
         return "ab";
     }
+
+    @RequestMapping(value = "/user4/{username}/{password}",method = RequestMethod.GET)
+    public String getUser4(@PathVariable String password,@PathVariable String username){
+        System.out.println("=================");
+        System.out.println(username+""+password);
+        return "ab";
+    }
+
+
 }
