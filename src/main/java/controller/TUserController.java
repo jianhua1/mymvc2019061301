@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pojo.TUser;
 import service.TUserService;
 
@@ -54,6 +51,13 @@ public class TUserController {
     @RequestMapping(value = "/user2", method = RequestMethod.GET)
     public String getUser2() {
         System.out.println("aaaa");
+        return "ab";
+    }
+
+    @RequestMapping(value = "/user3/{username}/{password}",method = RequestMethod.GET)
+    public String getUser3(@PathVariable String password,@PathVariable String username){
+        System.out.println("=================");
+        System.out.println(username+""+password);
         return "ab";
     }
 }
